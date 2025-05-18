@@ -1,21 +1,21 @@
 "use client";
 import { useState } from "react";
 export default function InputBox({
-  min,
-  max,
   type,
   className,
   placeHolder,
 }: {
-  min: string;
-  max: string;
   type: string;
   className: string;
   placeHolder?: string;
 }) {
   const [sum, setSum] = useState<number>(0);
-  function ChangeSum(e: number) {
-    setSum((prev) => (prev = e.target.value));
+  function ChangeSum(e: number,) {
+    if(sum>=0&&sum<=1000){
+          setSum(prev => prev = e.target.value);
+    } else {
+      setSum(0)
+    }
   }
   return (
     <input
@@ -23,7 +23,6 @@ export default function InputBox({
       value={sum}
       type={`${type}`}
       onChange={(e) => ChangeSum(e)}
-      placeholder={placeHolder}
     />
   );
 }

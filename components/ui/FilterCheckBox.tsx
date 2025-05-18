@@ -4,13 +4,13 @@ import React from "react";
 import { useState } from "react";
 
 interface Props {
-  className: string;
+  clasName: string;
   text: string;
   checkBox?: boolean;
   value: string;
 }
 export const FilterCheckBox: React.FC<Props> = ({
-  className,
+  clasName,
   text,
   checkBox,
   value,
@@ -20,10 +20,10 @@ export const FilterCheckBox: React.FC<Props> = ({
     setCheck(!check);
   }
   return (
-    <div className={className}>
+    <div className={clasName}>
       <input
         type="checkbox"
-        className={`rounded-[8px] w-4`}
+        className='rounded-[30px] w-4 focus:bg-orange-300'
         id={value}
         checked={check}
         onChange={isChecked}
