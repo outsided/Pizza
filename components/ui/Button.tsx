@@ -32,7 +32,7 @@ export default function Button({
       return (
         <button
           onClick={oncl}
-          className={`text-orange-600  rounded-xl inline-block text-[35px] border hover:bg-orange-700 hover:rotate-360 p-[10px] hover:text-amber-50 transform-all duration-2000 border-amber-500 cursor-pointer`}
+          className={`text-orange-600  rounded-xl inline-block ${textSize} border hover:bg-orange-700 hover:rotate-360 p-[10px] hover:text-amber-50 transform-all duration-2000 border-amber-500 cursor-pointer`}
         >
           {text}
         </button>

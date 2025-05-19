@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Sort from "./Sort";
 import { ArrowDownUp } from "lucide-react";
 
 export default function Categories() {
@@ -18,7 +17,6 @@ export default function Categories() {
   function funActiveIndex(indx: number) {
     setF(indx);
   }
-
   return (
     <div className="flex justify-between ">
       <div className="flex rounded-3xl bg-gray-100 text-black gap-10">
