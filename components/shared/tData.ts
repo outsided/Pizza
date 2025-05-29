@@ -1,4 +1,5 @@
-export type tIngredientsPizza =  {
-    name:string,
-    value:number
-}
+export type tIngredientsPizza = {
+  name: string;
+  value: number;
+};
+

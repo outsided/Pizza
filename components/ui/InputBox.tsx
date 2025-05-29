@@ -1,20 +1,22 @@
 "use client";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 export default function InputBox({
   type,
   className,
   placeHolder,
+  value,
 }: {
-  type: string;
+  type: number;
   className: string;
   placeHolder?: string;
+  value: number;
 }) {
   const [sum, setSum] = useState<number>(0);
-  function ChangeSum(e: number,) {
-    if(sum>=0&&sum<=1000){
-          setSum(prev => prev = e.target.value);
+  function ChangeSum(e: ChangeEvent<HTMLInputElement>) {
+    if (sum >= 0 && sum <= 1000) {
+      setSum((prev) => prev = e.target.value);
     } else {
-      setSum(0)
+      setSum(0);
     }
   }
   return (

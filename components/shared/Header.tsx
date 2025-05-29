@@ -1,4 +1,3 @@
-
 import nextPizza from "@/public/next.svg";
 import globe from "@/public/globe.svg";
 import Button from "@/components/ui/Button";
@@ -30,11 +29,7 @@ export default function Header() {
       </div>
       <div className="flex items-center gap-2">
         <User size={35} className="text-amber-600" />
-        <Button
-          variant="but2"
-          textSize="text-[20px]"
-          text="Войти"
-        />
+        <Button variant="but2" textSize="text-[20px]" text="Войти" />
         <button className="relative border group border-amber-600 p-[30px] rounded-2xl text-amber-600">
           <BaggageClaim className="absolute group-hover:opacity-0 duration-300 left-[17px] top-[17px] " />
           <ArrowBigRight className="absolute opacity-0 group-hover:opacity-100 duration-300 left-[17px] top-[17px] " />
