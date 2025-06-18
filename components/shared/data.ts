@@ -1,4 +1,9 @@
-import { tIngredientsPizza } from "@/components/shared/tData";
+import {
+  tIngredientsPizza,
+  tStateForProducts,
+} from "@/components/shared/tData";
+
+import ImgSRC from '../../public/coffe.jpg'
 export const ingredientsPizza: tIngredientsPizza[] = [
   {
     name: "Сырный соус",
@@ -39,5 +44,55 @@ export const ingredientsPizza: tIngredientsPizza[] = [
   {
     name: "Сыр",
     value: 10,
+  },
+];
+export const stateForProducts: tStateForProducts[] = [
+  {
+    name: "Pizza",
+    price: 550,
+    discription: "какое-то описание товара",
+    imgSrc: ImgSRC,
+  },
+  {
+    name: "Pizza",
+    price: 550,
+    discription: "какое-то описание товара",
+    imgSrc: ImgSRC,
+  },
+  {
+    name: "Pizza",
+    price: 550,
+    discription: "какое-то описание товара",
+    imgSrc: ImgSRC,
+  },
+  {
+    name: "Pizza",
+    price: 550,
+    discription: "какое-то описание товара",
+    imgSrc: ImgSRC,
+  },
+  {
+    name: "Pizza",
+    price: 550,
+    discription: "какое-то описание товара",
+    imgSrc: ImgSRC,
+  },
+  {
+    name: "Pizza",
+    price: 550,
+    discription: "какое-то описание товара",
+    imgSrc: ImgSRC,
+  },
+  {
+    name: "Pizza",
+    price: 550,
+    discription: "какое-то описание товара",
+    imgSrc: ImgSRC,
+  },
+  {
+    name: "Pizza",
+    price: 550,
+    discription: "какое-то описание товара",
+    imgSrc: ImgSRC,
   },
 ];

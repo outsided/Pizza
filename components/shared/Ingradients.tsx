@@ -7,19 +7,20 @@ import { Title } from "../ui/Title";
 import { useState } from "react";
 
 export default function Ingradients() {
-
   const [showAll, setShowAll] = useState<boolean>(false);
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState("");
 
   const showMore = () => {
     setShowAll(!showAll);
   };
-  function searchFilter(e:React.ChangeEvent<InputEvent>):void{
-    setSearch(prev=> prev=e.target.value)
+  function searchFilter(e: React.ChangeEvent<HTMLInputElement>): void {
+    setSearch((prev) => (prev = e.target.value));
   }
-  const forSearch = ingredientsPizza.filter(item=> item.name.toLowerCase().includes(search.toLocaleLowerCase()))
-
+  const forSearch = ingredientsPizza.filter((item) =>
+    item.name.toLowerCase().includes(search.toLocaleLowerCase())
+  );
   let haf = forSearch.slice(0, 4);
+
 
   return (
     <div className="flex flex-col gap-2">
@@ -36,7 +37,6 @@ export default function Ingradients() {
               key={index}
               clasName="flex gap-5"
               text={item.name}
-              value={item.value}
             />
           ))
         : haf.map((item, index) => (
@@ -44,7 +44,6 @@ export default function Ingradients() {
               key={index}
               clasName="flex gap-5"
               text={item.name}
-              value={item.value}
             />
           ))}
       <Button

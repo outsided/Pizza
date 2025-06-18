@@ -10,15 +10,11 @@ export default function MainBar() {
         <Title variant="title2" text="Фильтрация" />
       </div>
       <div className="flex flex-col gap-2">
-        <FilterCheckBox
-          clasName="flex gap-5"
-          text="Можно собирать"
-          value={100}
-        />
-        <FilterCheckBox clasName="flex gap-5" text="Новинки" value={101} />
+        <FilterCheckBox clasName="flex gap-5" text="Можно собирать" />
+        <FilterCheckBox clasName="flex gap-5" text="Новинки" />
       </div>
       <div>
-        <Title variant="title3" text="Цена от и до:" sizeTitle="my-[5px]" />
+        <Title variant="title3" text="Цена от и до:" sizeTitle="my-[5px]"/>
         <div className="flex gap-4">
           <InputBox
             className="text-gray-700 w-[100px] focus:outline-orange-400 border rounded-[30px] border-orange-300 pl-[20px]"
@@ -40,9 +36,8 @@ export default function MainBar() {
         <FilterCheckBox
           clasName="flex gap-5"
           text="Традициаонное"
-          value={103}
         />
-        <FilterCheckBox clasName="flex gap-5" text="Тонкое" value={104} />
+        <FilterCheckBox clasName="flex gap-5" text="Тонкое" />
       </div>
       <button className="w-[300px] h-[50px] bg-orange-500 text-white rounded-[50px] cursor-pointer hover:bg-orange-600">
         Применить

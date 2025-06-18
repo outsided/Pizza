@@ -6,7 +6,7 @@ export default function InputBox({
   placeHolder,
   value,
 }: {
-  type: number;
+  type: string;
   className: string;
   placeHolder?: string;
   value: number;
@@ -14,17 +14,12 @@ export default function InputBox({
   const [sum, setSum] = useState<number>(0);
   function ChangeSum(e: ChangeEvent<HTMLInputElement>) {
     if (sum >= 0 && sum <= 1000) {
-      setSum((prev) => prev = e.target.value);
+      setSum(Number(e.target.value));
     } else {
       setSum(0);
     }
   }
   return (
-    <input
-      className={className}
-      value={sum}
-      type={`${type}`}
-      onChange={(e) => ChangeSum(e)}
-    />
+    <input className={className} value={sum} type={type} onChange={ChangeSum} />
   );
 }

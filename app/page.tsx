@@ -10,7 +10,7 @@ export default function Home() {
       <div className="flex flex-col gap-4 ">
         <Title variant="title1" sizeTitle="" text="Все пиццы" />
       </div>
-      <div className="sticky top-[10px] shadow-lg py-[1px] rounded-3xl">
+      <div className="sticky top-[10px] py-[1px] rounded-3xl">
         <Categories />
       </div>
       <div>

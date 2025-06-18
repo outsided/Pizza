@@ -21,9 +21,9 @@ export default function Categories() {
     <div className="flex justify-between ">
       <div className="flex rounded-3xl bg-gray-100 text-black gap-10">
         {cats.map((item, index: number) => (
-          <a key={index} className="flex m-[1px]">
+          <a key={index} className="flex m-[4px]">
             <button
-              className={`hover:bg-white rounded-2xl p-[15px] cursor-pointer transform duration-300 hover:rotate-360 font-bold ${
+              className={`hover:bg-white rounded-2xl p-[15px] cursor-pointer transform duration-300 font-bold ${
                 f !== index ? `` : `text-orange-600 bg-white`
               }`}
               onClick={() => funActiveIndex(index)}

@@ -1,5 +1,5 @@
 import nextPizza from "@/public/next.svg";
-import globe from "@/public/globe.svg";
+import globe from "@/public/Search.png";
 import Button from "@/components/ui/Button";
 import Image from "next/image";
 import { Title } from "@/components/ui/Title";
@@ -19,6 +19,7 @@ export default function Header() {
             className="rounded-3xl w-[500px] h-[40px] pl-[40px] border border-amber-600 w-100%"
             type="text"
           />
+
           <Image
             className="absolute top-[10px] left-[10px] w-100%"
             src={globe}
