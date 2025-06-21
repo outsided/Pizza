@@ -6,8 +6,9 @@ import { useState } from "react";
 interface Props {
   clasName: string;
   text: string;
+  id:string,
 }
-export const FilterCheckBox: React.FC<Props> = ({ clasName, text }) => {
+export const FilterCheckBox: React.FC<Props> = ({ clasName, text,id }) => {
   const [check, setCheck] = useState(false);
   function isChecked() {
     setCheck(!check);
@@ -17,11 +18,11 @@ export const FilterCheckBox: React.FC<Props> = ({ clasName, text }) => {
       <input
         type="checkbox"
         className="rounded-[30px] w-4 border focus:border-none bg-gray-200"
-        id="checkbox"
+        id={id}
         checked={check}
         onChange={isChecked}
       />
-      <label htmlFor="checkbox" className="cursor-pointer">
+      <label htmlFor={id} className="cursor-pointer">
         <p>{text}</p>
       </label>
     </div>

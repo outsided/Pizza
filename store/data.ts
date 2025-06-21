@@ -3,8 +3,8 @@ import {
   tStateForProducts,
 } from "@/components/shared/tData";
 
-import ImgSRC from '../../public/coffe.jpg'
-export const ingredientsPizza: tIngredientsPizza[] = [
+import ImgSRC from "../public/coffe.jpg";
+const ingredientsPizza: tIngredientsPizza[] = [
   {
     name: "Сырный соус",
     value: 1,
@@ -46,7 +46,16 @@ export const ingredientsPizza: tIngredientsPizza[] = [
     value: 10,
   },
 ];
-export const stateForProducts: tStateForProducts[] = [
+const cats:string[] = [
+  "Все",
+  "Мясные",
+  "Острые",
+  "Сладкие",
+  "Вегетарианское",
+  "C курицей",
+  "Еще",
+];
+const stateForProducts: tStateForProducts[] = [
   {
     name: "Pizza",
     price: 550,
@@ -96,3 +105,4 @@ export const stateForProducts: tStateForProducts[] = [
     imgSrc: ImgSRC,
   },
 ];
+export const data = [cats, ingredientsPizza, stateForProducts];

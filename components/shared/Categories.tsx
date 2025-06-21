@@ -1,18 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState,useContext } from "react";
 import { ArrowDownUp } from "lucide-react";
+import { MyContext } from "@/app/page";
 
 export default function Categories() {
-  const cats = [
-    "Все",
-    "Мясные",
-    "Острые",
-    "Сладкие",
-    "Вегетарианское",
-    "C курицей",
-    "Еще",
-  ];
+  const context = useContext(MyContext);
+ 
   const [f, setF] = useState(0);
   function funActiveIndex(indx: number) {
     setF(indx);
@@ -20,7 +14,7 @@ export default function Categories() {
   return (
     <div className="flex justify-between ">
       <div className="flex rounded-3xl bg-gray-100 text-black gap-10">
-        {cats.map((item, index: number) => (
+        {context[0].map((item:any, index: number) => (
           <a key={index} className="flex m-[4px]">
             <button
               className={`hover:bg-white rounded-2xl p-[15px] cursor-pointer transform duration-300 font-bold ${

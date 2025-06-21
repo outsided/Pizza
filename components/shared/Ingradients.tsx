@@ -1,26 +1,25 @@
 "use client";
 
-import { ingredientsPizza } from "@/components/shared/data";
 import Button from "@/components/ui/Button";
 import { FilterCheckBox } from "../ui/FilterCheckBox";
 import { Title } from "../ui/Title";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { MyContext } from "@/app/page";
 
 export default function Ingradients() {
   const [showAll, setShowAll] = useState<boolean>(false);
   const [search, setSearch] = useState("");
-
+  const context = useContext(MyContext);
   const showMore = () => {
     setShowAll(!showAll);
   };
   function searchFilter(e: React.ChangeEvent<HTMLInputElement>): void {
     setSearch((prev) => (prev = e.target.value));
   }
-  const forSearch = ingredientsPizza.filter((item) =>
+  const forSearch = context[1].filter((item:any) =>
     item.name.toLowerCase().includes(search.toLocaleLowerCase())
   );
   let haf = forSearch.slice(0, 4);
-
 
   return (
     <div className="flex flex-col gap-2">
@@ -32,16 +31,18 @@ export default function Ingradients() {
         placeholder="Поиск..."
       />
       {showAll
-        ? forSearch.map((item, index) => (
+        ? forSearch.map((item: any, index) => (
             <FilterCheckBox
               key={index}
+              id={index.toString()}
               clasName="flex gap-5"
               text={item.name}
             />
           ))
-        : haf.map((item, index) => (
+        : haf.map((item: any, index) => (
             <FilterCheckBox
               key={index}
+              id={index.toString()}
               clasName="flex gap-5"
               text={item.name}
             />

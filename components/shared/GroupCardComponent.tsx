@@ -12,7 +12,7 @@ export default function GroupCardComponent({
   textTitle: string;
   products: any;
 }) {
-  const intersectionRef = React.useRef(null);
+  const intersectionRef:any = React.useRef(null);
   const intersection = useIntersection(intersectionRef, {
     threshold: 1,
   });
