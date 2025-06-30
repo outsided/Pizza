@@ -1,5 +1,4 @@
 "use client";
-
 import { Title } from "../ui/Title";
 import ProductCard from "./ProductСard";
 import { useIntersection } from "react-use";
@@ -8,17 +7,19 @@ import React from "react";
 export default function GroupCardComponent({
   textTitle,
   products,
+  category,
 }: {
   textTitle: string;
   products: any;
+  category: any;
 }) {
-  const intersectionRef:any = React.useRef(null);
+  const intersectionRef: any = React.useRef(null);
   const intersection = useIntersection(intersectionRef, {
-    threshold: 1,
+    threshold: 0.4,
   });
   React.useEffect(() => {
     if (intersection?.isIntersecting) {
-      console.log(textTitle);
+      category(textTitle)
     }
   }, [intersection?.isIntersecting, textTitle]);
   return (

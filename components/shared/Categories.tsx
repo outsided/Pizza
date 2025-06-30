@@ -1,13 +1,14 @@
 "use client";
 
-import { useState,useContext } from "react";
+import React, { useState,useContext,useEffect } from "react";
 import { ArrowDownUp } from "lucide-react";
 import { MyContext } from "@/app/page";
 
 export default function Categories() {
   const context = useContext(MyContext);
- 
-  const [f, setF] = useState(0);
+
+  const [f, setF] = useState<number>(0);
+
   function funActiveIndex(indx: number) {
     setF(indx);
   }

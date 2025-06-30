@@ -105,4 +105,10 @@ const stateForProducts: tStateForProducts[] = [
     imgSrc: ImgSRC,
   },
 ];
-export const data = [cats, ingredientsPizza, stateForProducts];
+  function reducer(count:string) {
+
+  let indxCount = cats.indexOf(count);
+    console.log(indxCount);
+  return indxCount>0?indxCount:0;
+}  
+export const data = [cats, ingredientsPizza, stateForProducts,reducer];
