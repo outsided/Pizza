@@ -2,8 +2,8 @@ import {
   tIngredientsPizza,
   tStateForProducts,
 } from "@/components/shared/tData";
+import ImgSRC from "../public/Pizzapie.jpg";
 
-import ImgSRC from "../public/coffe.jpg";
 const ingredientsPizza: tIngredientsPizza[] = [
   {
     name: "Сырный соус",
@@ -46,7 +46,7 @@ const ingredientsPizza: tIngredientsPizza[] = [
     value: 10,
   },
 ];
-const cats:string[] = [
+const cats: string[] = [
   "Все",
   "Мясные",
   "Острые",
@@ -105,10 +105,12 @@ const stateForProducts: tStateForProducts[] = [
     imgSrc: ImgSRC,
   },
 ];
-  function reducer(count:string) {
-
+function reducer(count: string) {
+  console.log("соунт", count);
   let indxCount = cats.indexOf(count);
-    console.log(indxCount);
-  return indxCount>0?indxCount:0;
-}  
-export const data = [cats, ingredientsPizza, stateForProducts,reducer];
+  return indxCount;
+}
+
+type DataTuple = [string[],tIngredientsPizza[], tStateForProducts[],(count:string)=>number];
+
+export const data:DataTuple = [cats, ingredientsPizza, stateForProducts, reducer];

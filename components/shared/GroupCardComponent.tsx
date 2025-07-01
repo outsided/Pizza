@@ -18,8 +18,8 @@ export default function GroupCardComponent({
     threshold: 0.4,
   });
   React.useEffect(() => {
-    if (intersection?.isIntersecting) {
-      category(textTitle)
+    if (intersection?.isIntersecting && textTitle) {
+      category(textTitle);
     }
   }, [intersection?.isIntersecting, textTitle]);
   return (

@@ -21,10 +21,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={nunit.className}>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <body className="mx-auto max-w-[1540px]">
-    
           <Header />
-          <hr className=" mt-[30px] mb-[30px] border border-amber-400" />
+          <hr className="mt-[30px] mb-[30px] mx-[100px] border border-amber-400 " />
           {children}
       </body>
     </html>
