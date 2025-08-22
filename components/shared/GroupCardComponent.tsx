@@ -17,8 +17,13 @@ export default function GroupCardComponent({
     threshold: 0.4,
   });
   React.useEffect(() => {
+<<<<<<< HEAD
     if (intersection?.isIntersecting) {
       // category(textTitle)
+=======
+    if (intersection?.isIntersecting && textTitle) {
+      category(textTitle);
+>>>>>>> 21428c18749f9babc28c7fe917e153bce0e15451
     }
   }, [intersection?.isIntersecting, textTitle]);
   console.log(s)

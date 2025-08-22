@@ -2,7 +2,11 @@ import {
   tIngredientsPizza,
   tStateForProducts,
 } from "@/components/shared/tData";
+<<<<<<< HEAD
 import ImgSRC from "../public/coffe.jpg";
+=======
+import ImgSRC from "../public/Pizzapie.jpg";
+>>>>>>> 21428c18749f9babc28c7fe917e153bce0e15451
 
 const ingredientsPizza: tIngredientsPizza[] = [
   {
@@ -105,6 +109,7 @@ const stateForProducts: tStateForProducts[] = [
     imgSrc: ImgSRC,
   },
 ];
+<<<<<<< HEAD
 
 function reducer(count: string): void {
   let indxCount = cats.indexOf(count);
@@ -124,3 +129,14 @@ export const data: DataTupe = [
   stateForProducts,
   reducer,
 ];
+=======
+function reducer(count: string) {
+  console.log("соунт", count);
+  let indxCount = cats.indexOf(count);
+  return indxCount;
+}
+
+type DataTuple = [string[],tIngredientsPizza[], tStateForProducts[],(count:string)=>number];
+
+export const data:DataTuple = [cats, ingredientsPizza, stateForProducts, reducer];
+>>>>>>> 21428c18749f9babc28c7fe917e153bce0e15451
