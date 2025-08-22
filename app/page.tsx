@@ -4,6 +4,7 @@ import { data } from "../store/data";
 import Categories from "@/components/shared/Categories";
 import Conteiner from "@/components/shared/Conteiner";
 import { Title } from "@/components/ui/Title";
+
 export const MyContext = createContext(data);
 
 export default function Home() {
