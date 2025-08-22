@@ -106,16 +106,16 @@ const stateForProducts: tStateForProducts[] = [
   },
 ];
 
-function reducer(count: string) {
+function reducer(count: string): void {
   let indxCount = cats.indexOf(count);
-  return indxCount;
+  see(indxCount);
 }
 
 type DataTupe = [
   string[],
   tIngredientsPizza[],
   tStateForProducts[],
-  (count: string) => number,
+  (count: string) => void,
 ];
 
 export const data: DataTupe = [

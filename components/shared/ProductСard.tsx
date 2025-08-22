@@ -1,5 +1,5 @@
 "use client";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import { Title } from "../ui/Title";
 import Link from "next/link";
 function ProductCard({
@@ -14,7 +14,7 @@ function ProductCard({
   price: number;
   add?: () => void;
   h3: string;
-  imgSrc: StaticImageData;
+  imgSrc:any ;
   id:number;
 }) {
   return (

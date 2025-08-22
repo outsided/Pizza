@@ -1,30 +1,28 @@
 "use client";
 
-import React, { useState,useContext,useEffect } from "react";
+import React from "react";
 import { ArrowDownUp } from "lucide-react";
-import { MyContext } from "@/app/page";
+import { useSelector } from "react-redux";
+import { useState } from "react";
 
 export default function Categories() {
-  const context = useContext(MyContext);
-  const [f, setF] = useState<number>(0);
-  function funActiveIndex(indx: number) {
-    setF(indx);
+  const [qwe, setQwe] = useState<number>(0);
+  function showButton(e: number) {
+    setQwe(e);
   }
-    
+  const stateRoom = useSelector((state:any) => state);
   return (
     <div className="flex justify-between ">
       <div className="flex rounded-3xl bg-gray-100 text-black gap-10">
-        {context[0].map((item: any, index: number) => (
-          <a key={index} className="flex m-[4px]">
-            <button
-              className={`hover:bg-white rounded-2xl p-[15px] cursor-pointer transform duration-300 font-bold ${
-                f !== index ? `` : `text-orange-600 bg-white`
-              }`}
-              onClick={() => funActiveIndex(index)}
-            >
-              {item}
-            </button>
-          </a>
+        {stateRoom.cats.map((item: string, index: number) => (
+          <button
+            key={index}
+            className={`gap-10 cursor-pointer p-[15px] m-[5px] text-[18px] text-orange-600
+          ${qwe === index ? " bg-white rounded-2xl font-bold" : ""}`}
+            onClick={() => showButton(index)}
+          >
+            {item}
+          </button>
         ))}
       </div>
       <div className="flex bg-gray-100 rounded-3xl justify-center items-center gap-5 p-[5px]">

@@ -1,3 +1,4 @@
+'use client'
 import nextPizza from "@/public/next.svg";
 import globe from "@/public/Search.png";
 import Button from "@/components/ui/Button";
@@ -6,6 +7,7 @@ import { Title } from "@/components/ui/Title";
 import { User, BaggageClaim, ArrowBigRight } from "lucide-react";
 
 export default function Header() {
+
   return (
     <header className="flex w-full h-[200px] justify-between ">
       <div className="flex justify-center gap-[50px] w-100%">

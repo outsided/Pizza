@@ -3,24 +3,24 @@
 import Button from "@/components/ui/Button";
 import { FilterCheckBox } from "../ui/FilterCheckBox";
 import { Title } from "../ui/Title";
-import { useState, useContext } from "react";
-import { MyContext } from "@/app/page";
+import { useSelector } from "react-redux";
+import { useState } from "react";
 
 export default function Ingradients() {
+  let s = useSelector((state: any) => state.ingredientsPizza);
   const [showAll, setShowAll] = useState<boolean>(false);
   const [search, setSearch] = useState("");
-  const context = useContext(MyContext);
+
   const showMore = () => {
     setShowAll(!showAll);
   };
   function searchFilter(e: React.ChangeEvent<HTMLInputElement>): void {
     setSearch((prev) => (prev = e.target.value));
   }
-  const forSearch = context[1].filter((item:any) =>
+  const forSearch = s.filter((item: { name: string }) =>
     item.name.toLowerCase().includes(search.toLocaleLowerCase())
   );
   let haf = forSearch.slice(0, 4);
-
   return (
     <div className="flex flex-col gap-2">
       <Title variant="title3" text="Ингредиенты:" sizeTitle="my-[5px]" />
@@ -31,7 +31,7 @@ export default function Ingradients() {
         placeholder="Поиск..."
       />
       {showAll
-        ? forSearch.map((item: any, index) => (
+        ? s.map((item: { name: string }, index: number) => (
             <FilterCheckBox
               key={index}
               id={index.toString()}
@@ -39,7 +39,7 @@ export default function Ingradients() {
               text={item.name}
             />
           ))
-        : haf.map((item: any, index) => (
+        : haf.map((item: { name: string }, index: number) => (
             <FilterCheckBox
               key={index}
               id={index.toString()}
@@ -47,6 +47,7 @@ export default function Ingradients() {
               text={item.name}
             />
           ))}
+
       <Button
         variant="but1"
         textSize="w-[150px] "

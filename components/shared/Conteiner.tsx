@@ -1,27 +1,26 @@
+"use client";
+
 import MainBar from "./MainBar";
 import GroupCardComponent from "./GroupCardComponent";
-import React, { useContext } from "react";
-import { MyContext } from "@/app/page";
+import React from "react";
+import { useSelector } from "react-redux";
 
 export default function Conteiner() {
-  const context = useContext(MyContext);
-
+  let s = useSelector((state:any) => state.stateForProducts);
   return (
     <div className="flex w-full gap-20 my-[20px]">
       <div>
         <MainBar />
       </div>
       <div className="flex w-full flex-col gap-[30px]">
-        <GroupCardComponent
-          textTitle="Мясные"
-          products={context[2]}
-          category={context[3]}
-        />
-        <GroupCardComponent
-          textTitle="Острые"
-          products={context[2]}
-          category={context[3]}
-        />
+        {s.ctegorProducts.map(
+          (item: string, index: number) => (
+            <GroupCardComponent
+              key={index}
+              textTitle={item}
+            />
+          )
+        )}
       </div>
     </div>
   );

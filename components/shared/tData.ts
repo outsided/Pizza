@@ -1,5 +1,4 @@
 import { StaticImageData } from "next/image";
-import { ImgHTMLAttributes } from "react";
 
 export type tIngredientsPizza = {
   name: string;
